@@ -204,7 +204,11 @@ op.gg
 데이터가 같더라고 레퍼런스가 다르면 다시 그린다.
 값도 같고 레퍼런스도 같으면 한번만 실행한다.
 
+react 오프라인 7강 - useEffect
 
+let num = 10;
+export {num}
+export default 는 한개만 땡겨올수 있다. 
 
 
 
