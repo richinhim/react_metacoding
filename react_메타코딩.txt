@@ -123,7 +123,83 @@ React 는 하나의 태그만 리턴해준다.
 
       console.log(b5);
 
+      /////////////////////////////////////////////////////////
+
       react 오프라인 5강 - 배열 수정하기(map과 spread응용)
+
+
+      const data = { phone: '2222' };
+      const a6 = {
+        id: 1,
+        name: '홍길동',
+        phone: '1111',
+        age: 17,
+        gender: '남',
+      };
+
+      //const b6 = { ...a6, name: '임꺽정' };
+      const b6 = { ...a6, ...data };
+
+      console.log('b6==>', b6);
+
+      const users = [
+        {
+          id: 1,
+          name: '구태모',
+          phone: '2222',
+        },
+        {
+          id: 2,
+          name: '이대협',
+          phone: '3333',
+        },
+        {
+          id: 3,
+          name: '오승훈',
+          phone: '4444',
+        },
+      ];
+
+      const updateUserDto = {
+        id: 2,
+        name: '홍길동',
+      };
+
+      //users[1].name = updateUserDto.name; (X)
+
+      const newUsers = users.map((user) =>
+        user.id === updateUserDto.id ? { ...user, ...updateUserDto } : user,
+      ); // const newUser = {...users}
+
+      console.log('newUsers=>', newUsers);
+
+/////////////////////////////////////////////////////////
+
+
+react 오프라인 6강 - useState
+
+const [number, setNumber] = useState(1); //React안에 hooks 라이브러리 상태값이 됨.
+
+  const add = () => {
+    //number++;
+    setNumber(number + 1); //리엑트한테 number값 변경할께 라고 요청
+    console.log('add', number);
+  };
+
+  return (
+    <div>
+      <h1>숫자:{number}</h1>
+      <button onClick={add}>더하기</button>
+    </div>
+  );
+
+rsc -> react 기본 템플릿 vscode에서 
+rcc -> 예전 방식 
+
+useState(1); //React안에 hooks 라이브러리 상태값이 됨.
+
+컴포넌트 설계를 잘해야.
+op.gg
 
 
 

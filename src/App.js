@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import './App.css';
+import Sub from './Sub';
 
 //0.React 엔진- 데이터변경감지에서 UI그려주는
 //1.실행과정(index.html) -SPA
@@ -16,32 +18,27 @@ import './App.css';
 //  - 외부 파일에 적는 방법
 //  - 라이브러리 사용(부트스르랩,component-styled)
 
-let a = 10; //변수
-const b = 20; //상수
+// let a = 10; //변수
+// const b = 20; //상수
 
 function App() {
-  let c;
-  let d = undefined;
-  console.log(c);
-  const mystyle = {
-    color: 'red',
+  //function add() {}
+
+  // let number = 1; // 상태값 아님.
+  const [number, setNumber] = useState(1); //React안에 hooks 라이브러리 상태값이 됨.
+
+  const add = () => {
+    //number++;
+    setNumber(number + 1); //리엑트한테 number값 변경할께 라고 요청
+    console.log('add', number);
   };
 
-  let list = [1, 2, 3];
-
+  // 랜더링 시점 = 상태값 변경
   return (
-    /* <div>
-      <div style={mystyle}>안녕{a === 20 ? '10입니다.' : '10이 아닙니다.'}</div>
-      <h1 className="box-style">해딩태그{b === 10 && '20입니다.'}</h1>
-      <hr />
-    </div> */
-
     <div>
-      <div>
-        {list.map((n) => (
-          <h1>{n}</h1>
-        ))}
-      </div>
+      <h1>숫자:{number}</h1>
+      <button onClick={add}>더하기</button>
+      <Sub />
     </div>
   );
 }
