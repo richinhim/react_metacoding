@@ -1,0 +1,92 @@
+
+*메타코딩 
+https://youtu.be/hdsALpVJwgU?list=PL93mKxaRDidEfLM0I_FFb-98vfAQgXT82
+
+1강. 설치 및 세팅
+
+리엑트 -> ajax -> 데이터 변경 감지(옵저버패턴,트리거) -> UI가 자동 업데이트 
+
+변경감지/UI업데이트 -> react가 해주는 일
+
+데몬 프로세스
+
+https://react.dev/learn/start-a-new-react-project
+https://ko.legacy.reactjs.org/
+
+
+npm -v
+-> 라이브러리 다운 -> 빌드 -> 프로젝트 3개 (로컬에 다 다운)
+-> 프로젝트마다, 글로벌 
+
+npx  -v
+-> 라이브러리 다운 -> 빌드 -> 프로젝트 3개(다운 받은 걸 재사용, 없으면 다운)
+-> 실행-> 삭제
+-> 
+
+https://react.dev/learn/start-a-new-react-project
+
+npx create-react-app my-app
+
+npm start
+
+eslint
+prettier
+
+format on save
+
+
+2강.실행흐름 이해하기 
+
+
+index.js
+
+App.js
+
+index.html -> root
+
+3.기본문법 
+JSX문법 - JavaScript + HTML 
+React 는 하나의 태그만 리턴해준다.
+
+4강. 배열(map, filter,slice,concat, spread연산자)
+
+불변함수 -> 깊은 복사 함수
+
+모듈화/컴포넌트화 
+
+리엑트 엔진
+-> 부모가 다시 그려지면 자식도 다시 그려야 될지 연산
+-> 다시 그려야 되면 다시 그리고 안 그리려면 안 그린다.
+-> 연산을 수행한다.
+-> 깊은 복사(레퍼런스 비교만 하면 끝남)
+-> 최적화를 위해 사용
+-> 연산을 최적화 시켜야.
+-> 자식을 다시 그려야 될지 말아야 될지 
+
+부모 변경 -> 연산(최적화)
+
+1.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

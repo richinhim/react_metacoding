@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>불변함수 -> 깊은 복사 함수</title>
+  </head>
+  <body>
+    <script>
+      //concat, filter, map, slice, 스프레드(전개) 연산자 ...
+
+      console.log('1.====================>스프레드 연산자');
+      const a = [1, 2, 3];
+
+      const b = [...a];
+
+      b.push(4); //b의 데이터 변경
+      console.log(`a의 값은: ${a}`);
+      console.log(`b의 값은: ${b}`);
+
+      console.log('2.====================>추가하기');
+      const a2 = [1, 2, 3];
+      const b2 = a2.concat(4);
+      console.log(`a2의 값은: ${a2}`); //1,2,3
+      console.log(`b2의 값은: ${b2}`); //1,2,3,4
+
+      const c2 = [...a, 4];
+      console.log('3.====================>걸러내기'); //삭제하기
+
+      const a1 = [0, ...a2, 4];
+      console.log(`a1의 값은: ${a1}`);
+
+      const a3 = [1, 2, 3];
+      const b3 = a3.filter((n) => {
+        //boolean을 return 받는다. -> true만 걸러낸다.
+        console.log('n=>', n);
+        return n != 1;
+      });
+
+      console.log(`b3 값은: ${b3}`);
+
+      console.log('4.====================>잘라내기');
+      a4 = [1, 2, 3];
+      b4 = a4.slice(0, 2);
+      console.log(b4); // [1,2]
+
+      const c4 = [...a4.slice(0, 2)];
+      console.log(c4); // [[1,2]]  <== const c4 = [a4.slice(0, 2)];
+
+      const c5 = [...a4.slice(0, 2), 4, ...a4.slice(2, 3)];
+      console.log(c5);
+
+      console.log('5.====================>반복하기'); //반복해서 복사하기
+
+      const a5 = [1, 2, 3];
+
+      /*   for (let i = 0; i < a.length; i++) {
+        console.log(a5[i]);
+      } */
+      a5.forEach((n) => {
+        console.log(n);
+      }); //리턴 못함.
+
+      const b5 = a5.map((n) => n + 10); //const b5 =[...a5]
+
+      console.log(b5);
+    </script>
+  </body>
+</html>
